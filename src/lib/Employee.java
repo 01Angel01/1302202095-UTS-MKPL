@@ -7,9 +7,7 @@ import java.util.List;
 public class Employee {
 
 	private String idNumber;
-	
-	private int yearJoined;
-	private int monthJoined;
+	private LocalDate dateJoined;
 	private int monthWorkingInYear;
 	
 	private boolean isForeigner;
@@ -23,10 +21,9 @@ public class Employee {
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String idNumber, int yearJoined, int monthJoined, boolean isForeigner) {
+	public Employee(String idNumber, LocalDate dateJoined, boolean isForeigner) {
 		this.idNumber = idNumber;
-		this.yearJoined = yearJoined;
-		this.monthJoined = monthJoined;
+		this.dateJoined = dateJoined;
 		this.isForeigner = isForeigner;
 		
 		childNames = new LinkedList<String>();
@@ -79,8 +76,8 @@ public class Employee {
 		//Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
 		LocalDate date = LocalDate.now();
 		
-		if (date.getYear() == yearJoined) {
-			monthWorkingInYear = date.getMonthValue() - monthJoined;
+		if (date.getYear() == dateJoined.getYear()) {
+			monthWorkingInYear = date.getMonthValue() - dateJoined.getMonthValue();
 		}else {
 			monthWorkingInYear = 12;
 		}
