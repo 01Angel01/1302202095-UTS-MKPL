@@ -2,13 +2,10 @@ package lib;
 
 public class TaxFunction {
 
-	 public final int penghasilanTidakKenaPajakSingle = 54000000;
-	 public final int penghasilanTidakKenaPajakChildren = 1500000;
-	 public final int penghasilanTidakKenaPajakMarried = 54000000 + 4500000;
-	
-	
-	public static int calculateTax(int penghasilanTidakKenaPajakSingle, int penghasilanTidakKenaPajakMarried, int penghasilanTidakKenaPajakChildren, int monthlySalary, int otherMonthlyIncome, int numberOfMonthWorking, int deductible, boolean isMarried, int numberOfChildren) {
-		
+	public static int calculateTax(int monthlySalary, int otherMonthlyIncome, int numberOfMonthWorking, int deductible, boolean isMarried, int numberOfChildren) {
+		int penghasilanTidakKenaPajakSingle = 54000000;
+	 	int penghasilanTidakKenaPajakChildren = 1500000;
+	 	int penghasilanTidakKenaPajakMarried = 54000000 + 4500000;
 		int tax = 0;
 		
 		if (numberOfMonthWorking > 12) {
