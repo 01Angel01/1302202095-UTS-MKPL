@@ -15,9 +15,6 @@ public class Employee {
 	private int monthlySalary;
 	private int otherMonthlyIncome;
 	private int annualDeductible;
-	private int penghasilanTidakKenaPajakSingle;
-	private int penghasilanTidakKenaPajakMarried;
-	private int penghasilanTidakKenaPajakChildren;
 	
 	private String spouseIdNumber;
 
@@ -85,6 +82,6 @@ public class Employee {
 			monthWorkingInYear = 12;
 		}
 		
-		return TaxFunction.calculateTax(penghasilanTidakKenaPajakSingle, penghasilanTidakKenaPajakMarried, penghasilanTidakKenaPajakChildren, monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
+		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
 	}
 }
