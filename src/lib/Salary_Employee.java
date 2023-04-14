@@ -15,17 +15,23 @@ public class Salary_Employee {
 	private String spouseIdNumber;
 	private List<String> childIdNumbers;
 
-    public void setMonthlySalary(int grade) {	
-		if (grade == 1) {
-			monthlySalary = 3000000;
-			Foreigner();
-		}else if (grade == 2) {
-			monthlySalary = 5000000;
-			Foreigner();
-		}else if (grade == 3) {
-			monthlySalary = 7000000;
-			Foreigner();
-		}
+    public void setMonthlySalary(int grade) {
+        switch(grade){
+            case 1: 
+                monthlySalary = 3000000;
+			    Foreigner();
+                break;
+            case 2:
+                monthlySalary = 5000000;
+			    Foreigner();
+                break;
+            case 3:
+                monthlySalary = 7000000;
+			    Foreigner();
+                break;
+            default:
+                break;
+        }
 	}
 
     private void Foreigner(){
